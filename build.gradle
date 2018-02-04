@@ -29,7 +29,8 @@ dependencies {
 	compile 'org.scala-lang:scala-compiler:2.11.7'
 	testCompile 'org.scalatest:scalatest_2.11:2.2.5'
 
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compileOnly('org.projectlombok:lombok')
+	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

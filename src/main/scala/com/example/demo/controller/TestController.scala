@@ -1,5 +1,10 @@
 package com.example.demo.controller
 
+import java.util
+
+import com.example.demo.entity.TestEntity
+import com.example.demo.service.TestService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.{RequestMapping, RestController}
 
 /**
@@ -7,7 +12,7 @@ import org.springframework.web.bind.annotation.{RequestMapping, RestController}
   */
 @RestController
 @RequestMapping(Array("/test"))
-class TestController {
+class TestController @Autowired()(testService: TestService) {
 
   @RequestMapping
   def index(): String = {
@@ -17,6 +22,16 @@ class TestController {
   @RequestMapping(Array("/test"))
   def test(): String = {
     "test"
+  }
+
+  @RequestMapping(Array("/find"))
+  def find(): util.List[TestEntity] = {
+    testService.find()
+  }
+
+  @RequestMapping(Array("/save"))
+  def save(): Unit = {
+    testService.save()
   }
 
 }
