@@ -15,9 +15,8 @@ class ApplicationTests {
   var testRepository : TestRepository = _
 
   @Autowired
-  def setMyServiceB(testRepository : TestRepository): Unit = {
+  def setMyServiceB(testRepository : TestRepository) =
     this.testRepository = testRepository
-  }
 
   @Test
   def index(): Unit = {
