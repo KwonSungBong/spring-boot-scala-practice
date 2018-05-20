@@ -12,9 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 class ApplicationTests {
 
-  var testRepository : TestRepository = null
+  var testRepository : TestRepository = _
 
-  @Autowired(required = false)
+  @Autowired
   def setMyServiceB(testRepository : TestRepository): Unit = {
     this.testRepository = testRepository
   }
