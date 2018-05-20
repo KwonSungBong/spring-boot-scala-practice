@@ -15,7 +15,7 @@ class ApplicationTests {
   var testRepository : TestRepository = _
 
   @Autowired
-  def setMyServiceB(testRepository : TestRepository) =
+  def setTestRepository(testRepository : TestRepository) =
     this.testRepository = testRepository
 
   @Test
